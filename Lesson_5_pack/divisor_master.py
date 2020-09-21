@@ -88,10 +88,16 @@ def most_plain_divider (number):
     divider_list = divider_number(number)
 
     divider_list.sort()
-
     divider_list.reverse()
 
-    return divider_list[0]
+    simp_divider = []
+
+    for divider in divider_list:
+        if simp_number(divider):
+            simp_divider.append(divider)
+    print(simp_divider)
+
+    return simp_divider[0]
 
 
 #==================================================================================
@@ -173,5 +179,7 @@ def most_big_divider (number):
     max_div.remove(max(max_div))
     return max_div[0]
 
+# print(most_plain_divider(100))
 
-print(most_big_divider(8889))
+
+# print(most_big_divider(8889))
